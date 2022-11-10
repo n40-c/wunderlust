@@ -1,0 +1,643 @@
+/*NAOMI CHAU*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*STARTS HERE*/
+@import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat&display=swap');
+/*colors*/
+:root{
+    --yellow: #F6D64A;
+    --teal: #55BCD5;
+    --purple: #9B26B0;
+    --blue: #499BD2;
+    --dark-gray: #222222;
+    --light-gray: #EAEAEA;
+}
+/*global styles*/
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 2;
+    font-size: 1.2rem;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 92%, rgba(85,188,213,1) 100%);
+    position: relative;
+}
+h1, h2, h3 {
+    font-family: 'Molle';
+    font-size: max(4rem, 12vw);
+    line-height: 1;
+}
+h2, h3 {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+    font-size: 3rem;
+}
+h1, h2, h3, p {
+    margin-left: 2rem;
+    margin-right: 2em;
+}
+h4 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+/*disappear*/
+nav h2 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+/*link styles*/
+a {
+    text-decoration: none;
+    color: black;
+}
+/*skip to content link*/
+#skip {
+    padding: 0.3em 1em;
+    background-color: var(--yellow);
+    position: absolute;
+    top: -999px;
+}
+#skip:focus {
+    position: static;
+}
+/*HEADER STYLES*/
+body {
+    width: 100%;
+}
+header{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    margin-top: 0.5em;
+}
+header h1, header p {
+    grid-column: 1/3;
+}
+header a {
+    display: block;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+nav {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+header p {
+    font-size: 1.6rem;
+    margin-bottom: 1em;
+    max-width: 30ch;
+    line-height: 1.5;
+}
+/*navigation menu functionality*/
+nav label {
+    display: block;
+    background-color: var(--yellow);
+    padding: 1em 0;
+    width: 100%;
+    
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+    transition: all .1s ease-out;
+}
+nav input {
+    display: none;
+}
+nav ul {
+    display: none;
+}
+#toggle:checked ~ label ~ ul{
+    display: block;
+    position: fixed;
+    top: 6ex;
+    left: 0;
+    width: 100vw;
+    background-color: var(--teal);
+}
+#toggle:checked ~ label {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5ex;
+    width: 100vw;
+    padding: 0;
+    padding-top: 1ex;
+    background-color: black;
+    color: white;
+    transition: all .2s;
+}
+/*toggled menu styles*/
+#toggle:checked ~ label ~ ul li {
+    border-bottom: 1px solid black;
+    padding: 4ex;
+    
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/*MAIN CONTENT*/
+/*intro*/
+#intro img{
+    width: 100%;
+}
+/*plan*/
+#plan {
+    background-color: var(--yellow);
+    padding-bottom: 1em;
+}
+#plan div {
+    display: grid;
+    grid-auto-columns: 80%;
+    grid-row-gap: 0.5em;
+    justify-content: center;
+}
+#plan section {
+    background-color: var(--teal);
+    border-radius: 1em;
+    border: solid 4px white;
+    padding: 1em 0;
+    text-align: center;
+}
+[src*="stay"] {
+    margin-top: 1.5em;
+}
+/*testimonials*/
+#testimonials section {
+    margin: 0 auto;
+    max-width: 22ch;
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 1em;
+}
+#testimonials q {
+    font-style: italic;
+    quotes: "\201C" "\201D";
+}
+#testimonials q:before {
+  content: open-quote;
+}
+
+#testimonials q:after {
+  content: close-quote;
+}
+/*about destination*/
+#about {
+    background-color: var(--blue);
+    padding-bottom: 1.5em;
+}
+#about div {
+    margin: 0 2em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em 0;
+}
+#about section {
+    text-align: center;
+    line-height: 1.5;
+}
+#about img {
+   height: 10ch;
+}
+/*contact*/
+#contact label, #contact input {
+    display: block;
+}
+#contact div > label, legend {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#contact input, select {
+    width: 100%;
+    height: 5rem;
+    border: solid 3px var(--purple);
+    margin-bottom: 1em;
+    padding: 0;
+    box-sizing: border-box;
+}
+#contact input::placeholder, select {
+    font-family: 'Montserrat';
+    color: var(--dark-gray);
+    font-size: 1.2rem;
+    padding-left: 1rem;
+}
+#contact form > * {
+    margin: 0 2rem;
+}
+.form-required {
+    font-family: 'Montserrat';
+    font-size: 1.3rem;
+    font-style: italic;
+}
+.required {
+    color: var(--purple);
+    font-weight: 300;
+    margin-left: 0.2em;
+}
+#contact [type="submit"] {
+    margin-top: 1em;
+    background-color: var(--purple);
+    color: white;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-size: 1.2rem;
+    height: 3.5em;
+}
+/*custom radios*/
+#contact fieldset label {
+    display: grid;
+    grid-template-columns: 4.2rem auto;
+    align-items: center;
+    column-gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+fieldset .radio-input {
+    display: grid;
+    place-items: center;
+}
+.radio-input {
+    height: 4rem;
+    width: 4rem;
+    background-color: white;
+    border: solid 3px var(--purple);
+    border-radius: 50%;
+}
+.radio-control {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: var(--purple);
+    display: none;
+}
+#nums input[type="radio"] {
+    display: none;
+}
+#nums input:checked + .radio-control {
+    display: block;
+}
+/*custom dropdown*/
+select {
+    appearance: none;
+}
+.custom-select {
+    position: relative;
+    display: grid;
+    justify-items: end;
+    align-items: start;
+}
+#selects .custom-select::after {
+    content: '';
+    width: 1.5rem;
+    height: 1.5rem;
+    border: solid 3px var(--purple);
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+    display: block;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin-right: 1.5rem;
+    margin-top: 1rem;
+}
+.custom-select > * {
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+/*FOOTER*/
+footer {
+    background-color: var(--light-gray);
+    padding-bottom: 2em;
+}
+footer > * {
+    display: block;
+    text-align: center;
+}
+footer p {
+    padding-top: 1em;
+    margin: 2em auto 1em;
+}
+
+@media screen and (min-width: 760px) {
+    /*HEADER*/
+    nav label {
+        display: none;
+    }
+    nav ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin: 0 2rem;
+        column-gap: 1em;
+        
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1rem;
+        text-align: center;
+    }
+    nav li {
+        padding: 1em 0;
+        background-color: white;
+    }
+    .active {
+        background-color: var(--yellow);
+    }
+    header{
+        margin-top: 2em;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    header h1{
+        grid-column: 2/5;
+        grid-row: 1/2;
+        font-size: 3.6rem;
+    }
+    header p {
+        grid-column: 2/5;
+        grid-row: 2/3;
+        font-size: 1.4rem;
+        margin-right: 0;
+    }
+    nav {
+        grid-column: 1/5;
+        grid-row: 3/4;
+    }
+    header a {
+        grid-row: 1/3;
+    }
+    /*MAIN CONTENT*/
+    /*intro*/
+    #img-grid {
+        margin: 0 2rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+    } 
+    #img-grid picture {
+        grid-column: 1/3;
+    }
+    /*plan and testimonials*/
+    #plan div, #testimonials div {
+        display: grid;
+        margin: 0 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+    }
+    /*about destination*/
+    #about div {
+        grid-template-columns: repeat(4, 25%);
+    }
+    #about img {
+        height: 7.5rem;
+        width: auto;
+    }
+    #about p {
+        margin: 0;
+    }
+    #about h4 {
+        font-size: 1.5rem;
+    }
+    /*contact*/
+    #contact fieldset {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #contact fieldset label {
+        column-gap: 1rem;
+    }
+    #contact [type="submit"] {
+        width: 55%;
+        margin-left: auto;
+    }
+    /*FOOTER*/
+    footer {
+        display: flex;
+        padding-top: 2em;
+        padding-right: 2rem; 
+    }
+    footer p {
+        padding-top: 0;
+        margin: 0;
+    }
+    footer > * {
+        font-size: 1rem;
+        margin-left: 2rem;
+    }
+    footer :first-child {
+        margin-left: auto;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    #contact {
+        width: 80%;
+    }
+    footer :first-child {
+        margin-left: 5%;
+    }
+}
+
+@media screen and (min-width: 1020px) {
+    body {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+    header {
+        margin: 0;
+        grid-template-columns: 13rem 80%;
+    }
+    nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    nav ul {
+        margin: 0;
+    }
+    header h1 {
+        margin-top: 6rem;
+    }
+    header a img {
+        margin-top: 4rem;
+    }
+    header h1, header p {
+        margin-left: 0;
+        grid-column: 2/3;
+    }
+    header p {
+        max-width: 100ch;
+    }
+    nav li {
+        padding: 0.2em 1em;
+    }
+    /*MAIN CONTENT*/
+    #intro, #plan, #testimonials, #contact, #about {
+        padding: 4rem 6rem 5rem;
+    }
+    h3,#plan div, #testimonials div, #contact form, #about div {
+        padding: 0.5rem 0 0 0;
+    }
+    h4 {
+        font-size: 1.2rem;
+    }
+    /*intro*/
+    #intro {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 7ex auto;
+        /*padding: 0 6rem;*/
+        margin: 5em auto 1em;
+    }
+    #intro h2, #intro p {
+        grid-column: 1/2;
+        margin: 0;
+        padding: 0;
+    }
+    #img-grid {
+        grid-row: 1/3;
+        grid-column: 2/3;
+        margin-right: 0;
+        grid-gap: 0.5rem;
+        grid-template-rows: repeat(2, min-content);
+    }
+    /*plan*/
+    #plan div {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 12em;
+    }
+    #plan img {
+        max-height: 60%;
+        max-width: 60%;
+    }
+    #plan section {
+        padding-bottom: 0;
+    }
+    /*testimonials*/
+    #testimonials div {
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1rem;
+    }
+    #testimonials img {
+        width: 60%;
+        margin-bottom: 0.5em;
+    }
+    #testimonials section {
+        max-width: 100%;
+    }
+    /*about destination*/
+    #about div {
+        margin: 0 15%;
+    }
+    #about img {
+        height: 40%;
+    }
+    /*contact*/
+    #contact form {
+        margin-left: 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+        width: 100%
+    }
+    #contact form > * {
+        margin: 0;
+    }
+    #contact input, #contact select {
+        height: 3.5rem;
+    }
+    #contact .custom-select {
+        padding: 0;
+    }
+    #names, #selects {
+        display: grid;
+        grid-auto-rows: 2rem 5rem;
+        /*grid-template-rows: min-content 7ex;*/
+    }
+    #nums {
+        display: grid;
+        grid-template-rows: 7rem;
+        grid-auto-rows: 2rem 5rem;
+    }
+    #contact fieldset label {
+        grid-template-columns: auto auto;
+        column-gap: 0.2rem;
+    }
+    fieldset label:nth-child(-n+3) {
+        margin-right: 0.8rem;
+    }
+    .radio-input {
+        height: 3rem;
+        width: 3rem;
+    }
+    .radio-control {
+        height: 2rem;
+        width: 2rem;
+    }
+    #contact [type="submit"] {
+        margin-top: 2rem;
+    }
+    #contact form ::placeholder, select {
+        font-size: 1rem;
+    }
+    #selects .custom-select::after {
+        width: 1rem;
+        height: 1rem;
+    }
+    /*FOOTER*/
+    footer > * {
+        font-size: 0.8rem;
+    }
+    footer a:nth-child(2) {
+        margin-left: auto;
+    }
+    footer a:last-child {
+        margin-right: 6%;
+    }
+}
