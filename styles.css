@@ -69,21 +69,21 @@ body {
 }
 h1, h2, h3 {
     font-family: 'Molle';
-    font-size: max(4rem, 12vw);
+    font-size: max(2.5rem, 12vw);
     line-height: 1;
 }
 h2, h3 {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     padding-top: 0.5em;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 h1, h2, h3, p {
     margin-left: 2rem;
     margin-right: 2em;
 }
 h4 {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -206,8 +206,11 @@ nav ul {
     background-color: var(--teal);
     border-radius: 1em;
     border: solid 4px white;
-    padding: 1em 0;
+    padding: 1em 1em;
     text-align: center;
+}
+#plan img {
+    max-width: 100%;
 }
 [src*="stay"] {
     margin-top: 1.5em;
@@ -239,15 +242,19 @@ nav ul {
 #about div {
     margin: 0 2em;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1em 0;
+    grid-template-columns: repeat(2, 48%);
+    grid-gap: 1em 4%;
 }
 #about section {
     text-align: center;
     line-height: 1.5;
 }
 #about img {
-   height: 10ch;
+    height: 6ch;
+}
+#about p {
+    margin: 0;
+    font-size: 1rem;
 }
 /*contact*/
 #contact label, #contact input {
@@ -366,8 +373,11 @@ footer p {
     padding-top: 1em;
     margin: 2em auto 1em;
 }
-
+/*MEDIUM STYLES*/
 @media screen and (min-width: 760px) {
+    h2, h3 {
+        font-size: 2.6rem;
+    }
     /*HEADER*/
     nav label {
         display: none;
@@ -433,16 +443,20 @@ footer p {
     /*about destination*/
     #about div {
         grid-template-columns: repeat(4, 25%);
+        grid-column-gap: 0;
+    }
+    #about section {
+        
     }
     #about img {
-        height: 7.5rem;
+        height: 7rem;
         width: auto;
     }
     #about p {
         margin: 0;
     }
     #about h4 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     /*contact*/
     #contact fieldset {
@@ -474,7 +488,7 @@ footer p {
         margin-left: auto;
     }
 }
-
+/*a bit larger than medium*/
 @media screen and (min-width: 900px) {
     #contact {
         width: 80%;
@@ -483,7 +497,7 @@ footer p {
         margin-left: 5%;
     }
 }
-
+/*LARGE STYLES*/
 @media screen and (min-width: 1020px) {
     body {
         font-size: 1rem;
